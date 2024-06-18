@@ -8,17 +8,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.conversify.ui.theme.ConversifyTheme
-import androidx.hilt.navigation.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
    /* Context: This approach is typically used within Activities or Fragments
      (using the activity-ktx or fragment-ktx libraries).
     val viewModel : CFViewModel by viewModels()*/
-    @Inject
-    lateinit var viewModel: CFViewModel
+   /* @Inject
+    lateinit var viewModel: CFViewModel*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ChatAppNavigation(viewModel)
+                    ChatAppNavigation()
                 }
             }
         }

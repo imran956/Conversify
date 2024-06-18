@@ -7,11 +7,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
-import com.example.conversify.Screen
-
+import com.example.conversify.CFViewModel
 @Composable
-fun LogInScreen(navController: NavController){
-    Text(text = "Hello How Are you", modifier = Modifier.background(Color.Red).clickable {
-        navController.navigateUp()
-    })
+fun LogInScreen(navController: NavController, viewModel: CFViewModel){
+    Text(text = "Hello How Are you", modifier = Modifier
+        .background(Color.Red)
+        .clickable {
+            navController.navigateUp()
+        }
+    )
 }
